@@ -1,0 +1,16 @@
+_format_version: "2.1"
+
+services:
+  - name: login
+    url: <url>
+    routes:
+      - name: login
+        paths:
+          - /api/login
+
+plugins:
+  - name: rate-limiting
+    service: login
+    config:
+      minute: 2
+      policy: local
